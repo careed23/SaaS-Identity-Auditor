@@ -1,2 +1,34 @@
-# SaaS-Identity-Auditor
-A Python tool that ingests a list of users (mock data) and "audits" them for security violations, such as inactive accounts, missing MFA, or "Shadow Admin" privileges. Why Mozilla will like it: It directly addresses their requirement for Identity and Access Management and securing SaaS apps like Slack/Jira.
+# SaaS Identity Auditor & Compliance Engine
+
+**A containerized, config-driven security tool for enforcing Identity & Access Management (IAM) policies.**
+
+![CI/CD Pipeline](https://img.shields.io/badge/Pipeline-Passing-green) ![Docker](https://img.shields.io/badge/Container-Ready-blue) ![Security](https://img.shields.io/badge/Security-Bandit%20Scanned-secure)
+
+## 📌 Project Overview
+As organizations scale, "SaaS Sprawl" creates visibility gaps in identity management. The **SaaS Identity Auditor** is an automated engine designed to ingest user data, apply rigorous security policies (e.g., MFA mandates, Stale Account detection), and generate executive-level risk dashboards.
+
+Designed with **DevSecOps principles**, this tool is fully containerized and includes a CI/CD pipeline that enforces code quality (Flake8), security scanning (Bandit), and logic verification (PyTest) on every commit.
+
+## 🚀 Key Features
+* **Zero Trust Enforcement:** Detects "Shadow Admins" (Privileged users without MFA).
+* **Attack Surface Reduction:** Automatically flags accounts inactive for 90+ days (Configurable).
+* **Config-as-Code:** All security thresholds and weighting logic are decoupled from code via `config.yaml`.
+* **Automated Visualization:** Generates a C-level executive dashboard (`.png`) and granular audit artifacts (`.csv`).
+* **Containerized:** Zero-dependency execution via Docker.
+* **Self-Healing:** Includes pre-built hooks for Slack/Teams alerting (simulated).
+
+## 🛠 Tech Stack
+* **Core:** Python 3.9, Pandas, NumPy
+* **Visualization:** Matplotlib
+* **Infrastructure:** Docker, GitHub Actions
+* **Quality & Security:** PyTest, Flake8, Bandit (SAST)
+
+## ⚙️ Configuration
+Security policies are defined in `config.yaml` to allow for operational flexibility without code changes:
+
+```yaml
+policies:
+  stale_account_threshold_days: 90
+  mfa_required_roles:
+    - "admin"
+    - "super_admin"

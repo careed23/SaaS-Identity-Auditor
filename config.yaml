@@ -1,0 +1,20 @@
+# Security Policy Configuration
+# This file decouples security rules from the application logic.
+
+policies:
+  stale_account_threshold_days: 90
+  mfa_required_roles:
+    - "admin"
+    - "super_admin"
+    - "billing_manager"
+
+alerting:
+  slack_webhook_enabled: true
+  slack_channel: "#security-alerts"
+  # In a real app, use environment variables for the actual URL
+  webhook_url_env_var: "SLACK_WEBHOOK_URL"
+
+compliance:
+  risk_score_weights:
+    stale_account: 1
+    shadow_admin: 5   # Critical risk

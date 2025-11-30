@@ -1,0 +1,31 @@
+Python artifacts
+
+pycache/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+Pytest cache
+
+.pytest_cache/
+
+Distribution / Packaging
+
+build/
+dist/
+*.egg-info/
+
+Generated Artifacts (Don't commit reports, keep repo clean)
+
+We want the script to generate these fresh, not store old ones
+
+audit_report_.csv
+security_dashboard_.png
+
+OS specific
+
+.DS_Store
