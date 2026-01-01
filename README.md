@@ -12,61 +12,26 @@
 
 ---
 
-<div align="center">
-
 ## 📌 Project Overview
-
 As organizations scale, "SaaS Sprawl" creates visibility gaps in identity management. The **SaaS Identity Auditor** is an automated engine designed to ingest user data, apply rigorous security policies (e.g., MFA mandates, Stale Account detection), and generate executive-level risk dashboards.
 
 Designed with **DevSecOps principles**, this tool is fully containerized and includes a CI/CD pipeline that enforces code quality (Flake8), security scanning (Bandit), and logic verification (PyTest) on every commit.
 
-</div>
-
----
-
-<div align="center">
-
 ## 🚀 Key Features
-
-**Zero Trust Enforcement**
-Detects "Shadow Admins" (Privileged users without MFA).
-
-**Attack Surface Reduction**
-Automatically flags accounts inactive for 90+ days (Configurable).
-
-**Config-as-Code**
-All security thresholds and weighting logic are decoupled from code via `config.yaml`.
-
-**Automated Visualization**
-Generates a C-level executive dashboard (`.png`) and granular audit artifacts (`.csv`).
-
-**Containerized**
-Zero-dependency execution via Docker.
-
-**Self-Healing**
-Includes pre-built hooks for Slack/Teams alerting (simulated).
-
-</div>
-
----
-
-<div align="center">
+* **Zero Trust Enforcement:** Detects "Shadow Admins" (Privileged users without MFA).
+* **Attack Surface Reduction:** Automatically flags accounts inactive for 90+ days (Configurable).
+* **Config-as-Code:** All security thresholds and weighting logic are decoupled from code via `config.yaml`.
+* **Automated Visualization:** Generates a C-level executive dashboard (`.png`) and granular audit artifacts (`.csv`).
+* **Containerized:** Zero-dependency execution via Docker.
+* **Self-Healing:** Includes pre-built hooks for Slack/Teams alerting (simulated).
 
 ## 🛠 Tech Stack
-
-**Core:** Python 3.9, Pandas, NumPy
-**Visualization:** Matplotlib
-**Infrastructure:** Docker, GitHub Actions
-**Quality & Security:** PyTest, Flake8, Bandit (SAST)
-
-</div>
-
----
-
-<div align="center">
+* **Core:** Python 3.9, Pandas, NumPy
+* **Visualization:** Matplotlib
+* **Infrastructure:** Docker, GitHub Actions
+* **Quality & Security:** PyTest, Flake8, Bandit (SAST)
 
 ## ⚙️ Configuration
-
 Security policies are defined in `config.yaml` to allow for operational flexibility without code changes:
 
 ```yaml
