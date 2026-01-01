@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛡️ SaaS Identity Auditor & Compliance Engine
+# 🛡️ SaaS Identity Auditor & Compliance Engine 🛡️
 
 **A containerized, config-driven security tool for enforcing Identity & Access Management (IAM) policies.**
 
