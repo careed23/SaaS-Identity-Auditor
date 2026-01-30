@@ -48,6 +48,32 @@ Designed with **DevSecOps principles**, this tool is fully containerized and inc
 * Decoupled policy management (`config.yaml`) enables security teams to enforce rules without code releases.
 * CI/CD integration triggers automated remediation workflows.
 
+## ☁️ AWS IAM Connector
+The AWS IAM auditor pulls live IAM users to generate audit-ready data. Ensure your environment has AWS credentials configured (for example via `aws configure` or environment variables).
+
+```python
+from connectors.aws_auditor import AWSAuditor
+
+aws_auditor = AWSAuditor()
+audit_data = aws_auditor.get_user_audit_data()
+```
+
+## 🧯 Automated Remediation (Self-Healing)
+The remediation helper enforces MFA policy for admin users with a simple hook you can integrate into workflows.
+
+```python
+from remediate import enforce_mfa_policy
+
+enforce_mfa_policy(audit_results)
+```
+
+## 📈 Risk Trends Dashboard
+The visualizer now compares the latest audit report with the most recent historical report stored in `history/`.
+
+1. Run `auditor.py` to generate the latest `audit_report_*.csv`.
+2. Move an older report into `history/` (e.g., `history/audit_report_20240101_120000.csv`).
+3. Run `visualizer.py` to see the trend annotation.
+
 ## 🧭 Suggested Enhancements
 * Add connectors to pull identities directly from SaaS APIs (Okta, Entra ID, Google Workspace) instead of JSON files.
 * Map risk scores to cloud governance frameworks (CIS, NIST 800-53) for standardized reporting.
@@ -63,3 +89,4 @@ policies:
   mfa_required_roles:
     - "admin"
     - "super_admin"
+```
