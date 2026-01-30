@@ -32,19 +32,19 @@ Designed with **DevSecOps principles**, this tool is fully containerized and inc
 * **Quality & Security:** PyTest, Flake8, Bandit (SAST)
 
 ## 👷 Cloud Architect Use Cases
-**Multi-Tenant SaaS Auditing**
+### Multi-Tenant SaaS Auditing
 * Audit identity posture across disconnected SaaS applications (Okta, Entra, Google Workspace, Slack).
 * Enforce uniform security baselines (MFA mandates, account lifecycle policies) via config-as-code.
 
-**Compliance & Audit Automation**
+### Compliance & Audit Automation
 * Auto-generate executive dashboards for SOC2, ISO 27001, and HIPAA audit trails.
 * Risk-scored CSV exports integrate with SIEM/GRC platforms (Splunk, Sentinel, ServiceNow).
 
-**Zero Trust Implementation**
+### Zero Trust Implementation
 * Automated "Shadow Admin" detection prevents privilege escalation blind spots.
 * Stale account quarantining reduces insider threat surface in hybrid environments.
 
-**DevSecOps Governance**
+### DevSecOps Governance
 * Decoupled policy management (`config.yaml`) enables security teams to enforce rules without code releases.
 * CI/CD integration triggers automated remediation workflows.
 
