@@ -25,6 +25,7 @@ We want the script to generate these fresh, not store old ones
 
 audit_report_.csv
 security_dashboard_.png
+history/
 
 OS specific
 
